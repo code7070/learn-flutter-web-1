@@ -8,10 +8,23 @@ class H1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Div(Text(
-      title,
-      style: const TextStyle(
-          fontWeight: FontWeight.w700, fontSize: 20, color: Colors.black87),
-    ));
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      double fontSize = 20.00;
+
+      if (MediaQuery.of(context).size.width > 1024) {
+        fontSize = 28;
+      } else if (MediaQuery.of(context).size.width > 768) {
+        fontSize = 22;
+      }
+
+      return Div(Text(
+        title,
+        style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: fontSize,
+            color: Colors.black87),
+      ));
+    });
   }
 }
