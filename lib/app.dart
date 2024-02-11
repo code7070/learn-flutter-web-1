@@ -8,15 +8,13 @@ class WebApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Web WKND',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
-      initialRoute: '/',
-      home: const MyHomePage(),
-      // routes: {
-      //   '/': (context) => const MyHomePage(),
-      //   '/second': (context) => const SecondPage(),
-      // }
-    );
+        title: 'Flutter Web WKND',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const MyHomePage(),
+          // '/second': (context) => const SecondPage(),
+        });
   }
 }

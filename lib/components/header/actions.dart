@@ -11,12 +11,15 @@ class ActionsGroup extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(left: 10, right: 10),
-          child: const Icon(Icons.shopping_cart),
+          child: IconButton(
+              onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 10, right: 10),
-          child: const Icon(Icons.people),
-        )
+            margin: const EdgeInsets.only(left: 10, right: 10),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.people),
+            ))
       ],
     );
   }
