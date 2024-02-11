@@ -11,6 +11,6 @@ class HomeBanner extends StatelessWidget {
     return const ResponsiveLayout(
         mobileView: HeroMobile(),
         desktopView: HeroDesktop(),
-        tabletView: HeroMobile());
+        tabletView: HeroDesktop());
   }
 }
