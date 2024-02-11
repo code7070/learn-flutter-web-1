@@ -20,7 +20,7 @@ class ButtonPrimaryOutline extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(0)),
                 side: BorderSide(
                   color: appColorPrimary,
-                  width: 1.5,
+                  width: 1,
                 )))),
         child: Text(caption,
             style: const TextStyle(

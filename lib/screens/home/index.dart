@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/components/header/index.dart';
+import 'package:flutter_web/screens/home/discover.dart';
 import 'package:flutter_web/screens/home/hero.dart';
 import 'package:flutter_web/screens/home/pendant.dart';
 
@@ -12,7 +13,7 @@ class MyHomePage extends StatelessWidget {
       appBar: const HeaderBar(),
       body: SingleChildScrollView(
         child: Column(
-          children: const [HomeBanner(), HomePendant()],
+          children: const [HomeBanner(), HomePendant(), HomeDiscover()],
         ),
       ),
     );

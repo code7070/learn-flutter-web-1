@@ -33,7 +33,7 @@ class HomePendant extends StatelessWidget {
     var rowDesktop = Row(children: elms);
 
     return Container(
-      margin: const EdgeInsets.only(top: 48),
+      margin: const EdgeInsets.only(top: 48, bottom: 48),
       constraints: const BoxConstraints(
         maxWidth: 1500,
       ),
