@@ -10,7 +10,8 @@ class LogoFont extends StatelessWidget {
   Widget build(BuildContext context) {
     return Div(const Text(
       'Artsy Colelctives',
-      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+      style: TextStyle(
+          fontWeight: FontWeight.bold, color: Colors.black, fontSize: 24),
     ));
   }
 }

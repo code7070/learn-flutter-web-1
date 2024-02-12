@@ -11,12 +11,9 @@ class HeaderMobile extends StatelessWidget {
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 0.0,
-      leading: const Drawer(
-        elevation: 0.0,
-      ),
       title: const LogoFont(),
-      actions: [
-        const ActionsGroup(),
+      actions: const [
+        ActionsGroup(),
       ],
     );
   }
