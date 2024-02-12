@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/components/text/h1.dart';
 import 'package:flutter_web/helpers/responsive.dart';
-import 'package:flutter_web/screens/home/discover_thumbnail2.dart';
+import 'package:flutter_web/screens/home/discover_thumbnail.dart';
 
 class HomeDiscover extends StatelessWidget {
   const HomeDiscover({super.key});

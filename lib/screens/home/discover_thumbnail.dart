@@ -1,98 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/helpers/colors.dart';
 
-class ThumbnailDiscover extends StatelessWidget {
+class DiscoverThumbnail extends StatelessWidget {
+  final String image;
   final String title;
   final String description;
-  final String linkText;
-  final String image;
 
-  const ThumbnailDiscover(
+  const DiscoverThumbnail(
       {super.key,
+      required this.image,
       required this.title,
-      required this.description,
-      required this.linkText,
-      required this.image});
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
-    var imageName = AssetImage("assets/images/$image");
-
     return Container(
-      padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.only(top: 24, bottom: 24),
+      margin: const EdgeInsets.all(16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(
-            image: imageName,
-            fit: BoxFit.contain,
+            image: AssetImage('assets/images/$image'),
+            fit: BoxFit.fill,
             width: double.infinity,
           ),
           Container(
-            margin: const EdgeInsets.only(bottom: 16, top: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Title(title: title),
-                Description(description: description)
-              ],
+              padding: const EdgeInsets.all(12),
+              child: Text(
+                title,
+                textAlign: TextAlign.left,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                    color: appColorBase100),
+              )),
+          Container(
+            margin: const EdgeInsets.all(8),
+            child: Text(
+              description,
+              style: const TextStyle(fontSize: 12),
+              textAlign: TextAlign.left,
             ),
           ),
           Container(
-              margin: const EdgeInsets.only(top: 16),
-              child: Text(linkText,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: appColorPrimary,
-                      fontSize: 14))),
+            margin: const EdgeInsets.only(top: 16),
+            child: const Text(
+              'Shop Wedding Collection',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                  color: appColorPrimary,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14),
+            ),
+          )
         ],
-      ),
-    );
-  }
-}
-
-class Description extends StatelessWidget {
-  const Description({
-    super.key,
-    required this.description,
-  });
-
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 4, bottom: 4),
-      child: Text(
-        description,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-          color: appColorBase100,
-          fontSize: 12,
-        ),
-      ),
-    );
-  }
-}
-
-class Title extends StatelessWidget {
-  const Title({
-    super.key,
-    required this.title,
-  });
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 4, bottom: 4),
-      child: Text(
-        title,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-            fontWeight: FontWeight.w700, fontSize: 14, color: appColorBase100),
       ),
     );
   }
