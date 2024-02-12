@@ -24,6 +24,7 @@ class HomeDiscover extends StatelessWidget {
     var desktopThumbnail = Container(
       constraints: const BoxConstraints(maxWidth: 1400),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Expanded(flex: 1, child: thumb1),
           Expanded(flex: 1, child: thumb2)
@@ -42,7 +43,10 @@ class HomeDiscover extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const H1(title: 'Discover More'),
+          Container(
+            margin: const EdgeInsets.only(bottom: 28),
+            child: const H1(title: 'Discover More'),
+          ),
           ResponsiveLayout(
               mobileView: mobileThumbnail,
               desktopView: desktopThumbnail,

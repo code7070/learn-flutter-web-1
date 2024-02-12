@@ -15,45 +15,55 @@ class DiscoverThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          Image(
-            image: AssetImage('assets/images/$image'),
-            fit: BoxFit.fill,
-            width: double.infinity,
-          ),
-          Container(
-              padding: const EdgeInsets.all(12),
-              child: Text(
-                title,
+        margin: const EdgeInsets.all(24),
+        child: LayoutBuilder(builder: (context, constraints) {
+          double titleSize = 14;
+          double fontSize = 12;
+          double marginTitle = 16;
+
+          if (MediaQuery.of(context).size.width > 768) {
+            titleSize = 18;
+            fontSize = 18;
+            marginTitle = 18;
+          }
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image(
+                image: AssetImage('assets/images/$image'),
+                fit: BoxFit.fill,
+                width: double.infinity,
+              ),
+              Container(
+                  margin: EdgeInsets.only(top: marginTitle, bottom: 8),
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontSize: titleSize,
+                        fontWeight: FontWeight.w700,
+                        color: appColorBase100),
+                  )),
+              Container(
+                margin: const EdgeInsets.only(bottom: 16),
+                child: Text(
+                  description,
+                  style: TextStyle(fontSize: fontSize),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              Text(
+                'Shop Wedding Collection',
                 textAlign: TextAlign.left,
-                style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                    color: appColorBase100),
-              )),
-          Container(
-            margin: const EdgeInsets.all(8),
-            child: Text(
-              description,
-              style: const TextStyle(fontSize: 12),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 16),
-            child: const Text(
-              'Shop Wedding Collection',
-              textAlign: TextAlign.left,
-              style: TextStyle(
+                style: TextStyle(
+                  fontSize: fontSize,
                   color: appColorPrimary,
                   fontWeight: FontWeight.w600,
-                  fontSize: 14),
-            ),
-          )
-        ],
-      ),
-    );
+                ),
+              )
+            ],
+          );
+        }));
   }
 }
