@@ -10,9 +10,11 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isTablet = MediaQuery.of(context).size.width > 768;
+
     return Scaffold(
       appBar: const HeaderBar(),
-      drawer: const HeaderDrawer(),
+      drawer: isTablet ? null : const HeaderDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: const [HomeBanner(), HomePendant(), HomeDiscover()],
