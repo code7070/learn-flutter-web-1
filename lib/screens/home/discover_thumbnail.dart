@@ -18,39 +18,37 @@ class ThumbnailDiscover extends StatelessWidget {
   Widget build(BuildContext context) {
     var imageName = AssetImage("assets/images/$image");
 
-    return Expanded(
-        flex: 1,
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          margin: const EdgeInsets.only(top: 24, bottom: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image(
-                image: imageName,
-                fit: BoxFit.contain,
-                width: double.infinity,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 16, top: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Title(title: title),
-                    Description(description: description)
-                  ],
-                ),
-              ),
-              Container(
-                  margin: const EdgeInsets.only(top: 16),
-                  child: Text(linkText,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: appColorPrimary,
-                          fontSize: 14))),
-            ],
+    return Container(
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(top: 24, bottom: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image(
+            image: imageName,
+            fit: BoxFit.contain,
+            width: double.infinity,
           ),
-        ));
+          Container(
+            margin: const EdgeInsets.only(bottom: 16, top: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Title(title: title),
+                Description(description: description)
+              ],
+            ),
+          ),
+          Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: Text(linkText,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: appColorPrimary,
+                      fontSize: 14))),
+        ],
+      ),
+    );
   }
 }
 
