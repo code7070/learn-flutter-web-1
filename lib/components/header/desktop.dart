@@ -1,4 +1,3 @@
-import 'package:div/div.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web/components/header/actions.dart';
 import 'package:flutter_web/components/header/logo.dart';
@@ -22,7 +21,7 @@ class HeaderDesktop extends StatelessWidget implements PreferredSizeWidget {
             margin: const EdgeInsets.only(left: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 Text('Collections'),
                 Text('Coco Crush'),
                 Text('High Jewelry'),
@@ -38,6 +37,7 @@ class HeaderDesktop extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0.0,
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
+      automaticallyImplyLeading: false,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/helpers/router.dart';
 
 class ActionsGroup extends StatelessWidget {
   const ActionsGroup({
@@ -7,6 +8,10 @@ class ActionsGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void pushToProfile() {
+      RouterUtils.pushTo('/profile', context);
+    }
+
     return Row(
       children: [
         Container(
@@ -17,7 +22,7 @@ class ActionsGroup extends StatelessWidget {
         Container(
             margin: const EdgeInsets.only(left: 10, right: 10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: pushToProfile,
               icon: const Icon(Icons.people),
             ))
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/screens/home/index.dart';
+import 'package:flutter_web/screens/profile/index.dart';
 
 class WebApp extends StatelessWidget {
   const WebApp({super.key});
@@ -14,7 +15,7 @@ class WebApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const MyHomePage(),
-          // '/second': (context) => const SecondPage(),
+          '/profile': (context) => const ProfileScreen(),
         });
   }
 }
