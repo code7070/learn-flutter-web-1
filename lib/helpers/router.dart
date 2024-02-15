@@ -5,4 +5,8 @@ class RouterUtils {
     var location = ModalRoute.of(context)?.settings.name;
     if (location != target) Navigator.of(context).pushNamed(target);
   }
+
+  static void back(BuildContext context) {
+    return Navigator.of(context).pop();
+  }
 }
