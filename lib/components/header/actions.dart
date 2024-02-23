@@ -8,8 +8,11 @@ class ActionsGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RouterUtils router = RouterUtils();
+
     void pushToProfile() {
-      RouterUtils.pushTo('/profile', context);
+      // RouterUtils.pushTo('/album', context);
+      router.pushTo('/album', context, null);
     }
 
     return Row(

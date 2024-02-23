@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/screens/404/index.dart';
 import 'package:flutter_web/screens/home/index.dart';
+import 'package:flutter_web/screens/profile/detail/index.dart';
 import 'package:flutter_web/screens/profile/index.dart';
 
 class WebApp extends StatelessWidget {
@@ -16,7 +17,8 @@ class WebApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(),
-        '/profile': (context) => const ProfileScreen(),
+        '/album': (context) => const AlbumScreen(),
+        '/album/detail': (context) => const AlbumDetail(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) {
