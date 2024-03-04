@@ -17,7 +17,7 @@ class AlbumData {
 }
 
 Future<List<AlbumData>> fetchAlbums() async {
-  String endpoint = BaseAPI.endpoint;
+  String endpoint = BaseAPI.endpointAlbum;
 
   var resp = await http.get(Uri.parse(endpoint));
   if (resp.statusCode == 200) {
